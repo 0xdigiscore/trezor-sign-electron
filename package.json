@@ -1,0 +1,93 @@
+{
+    "name": "trezor-sign-tools",
+    "version": "0.0.5",
+    "description": "Example of electron app with trezor-connect",
+    "main": "src/electron.js",
+    "author": "Satoshilabs s.r.o <info@satoshilabs.com>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "electron .",
+        "build:mac": "electron-builder --mac",
+        "build:linux": "electron-builder --linux",
+        "build:win": "electron-builder --win"
+    },
+    "build": {
+        "appId": "${name}",
+        "productName": "TrezorSignTools",
+        "copyright": "Copyright © year ${author}",
+        "asar": false,
+        "electronVersion": "17.1.2",
+        "directories": {
+            "output": "build"
+        },
+        "files": [
+            "src/**/*",
+            "src/*",
+            "src/index.html",
+            "package.json"
+        ],
+        "dmg": {
+            "contents": [
+                {
+                    "x": 410,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                },
+                {
+                    "x": 130,
+                    "y": 150,
+                    "type": "file"
+                }
+            ]
+        },
+        "mac": {
+            "target": "zip"
+        },
+        "linux": {
+            "executableName": "TrezorConnectExample",
+            "artifactName": "TrezorConnectExample.${ext}",
+            "target": "AppImage"
+        },
+        "win": {
+            "target": "portable"
+        }
+    },
+    "devDependencies": {
+        "electron": "^17.1.2",
+        "electron-builder": "^22.7.0"
+    },
+    "dependencies": {
+        "@chainx-v2/api": "^0.0.50",
+        "@ledgerhq/hw-app-btc": "^5.34.1",
+        "@ledgerhq/hw-transport-node-hid": "^5.34.0",
+        "@ledgerhq/logs": "^5.30.0",
+        "@polkadot/api": "^6.11.1",
+        "@types/bitcoinjs-lib": "^5.0.0",
+        "babel-plugin-add-module-exports": "^1.0.2",
+        "@types/ledgerhq__hw-app-btc": "^5.19.2",
+        "@types/ledgerhq__hw-transport-node-hid": "^4.22.2",
+        "@types/memoizee": "^0.4.5",
+        "babel-polyfill": "^6.26.0",
+        "babel-runtime": "^6.26.0",
+        "bignumber.js": "^9.0.1",
+        "bitcoinjs-lib": "git+https://github.com/chainpool/bitcoinjs-lib.git#electron",
+        "bitcoinjs-lib-zcash": "git+https://github.com/wliyongfeng/bitcoinjs-lib-zcash.git#electron",
+        "bitcore-lib": "^8.3.4",
+        "bs58check": "^2.1.2",
+        "buffer-reverse": "^1.0.1",
+        "class-transformer": "^0.3.1",
+        "cli-table3": "^0.6.0",
+        "colors": "^1.4.0",
+        "console.table": "^0.10.0",
+        "dotenv": "^8.2.0",
+        "enquirer": "^2.3.6",
+        "esm": "^3.2.25",
+        "gluegun": "latest",
+        "js-base64": "^3.6.0",
+        "memoizee": "^0.4.14",
+        "node-fetch": "^2.6.1",
+        "ora": "^5.1.0",
+        "trezor-connect": "^8.2.7-extended"
+    }
+}
