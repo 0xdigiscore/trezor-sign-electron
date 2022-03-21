@@ -17,5 +17,3 @@ This application can be also developed and published in browser since it doesn't
 `yarn build:mac`
 
 `yarn build:linux`
-
-`yarn build:win`
